@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    scroll-behavior: smooth;
+    
+}
+
+nav {
+    z-index: 999;
+    width: 90%;
+    height: 10vh;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    left: 50%;
+    top: 20px;
+    transform: translate(-50%);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navitem {
+    display: flex;
+    gap: 25px;
+    font-family: "Cabin", serif;
+    position: relative;
+    right: 3%;
+}
+
+nav h1 {
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-size: 45px;
+    position: relative;
+    left: 3%;
+    color: black;
+}
+
+.navitem a {
+    transition: all 0.3s;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.navitem a:hover {
+    border-bottom: 2px solid black;
+}
+
+.navitem a:active {
+    color: rgb(212, 155, 10);
+    border-bottom: 2px solid rgb(212, 155, 10);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .navitem {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 5%;
+        background-color: rgba(255, 255, 255, 0.651);
+        width: 70%;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navitem.active {
+        display: flex;
+    }
+
+    .navitem a {
+        color: black;
+        padding: 10px;
+        text-decoration: none;
+        border-bottom: none;
+    }
+
+    .navitem a:hover {
+        color: rgb(212, 155, 10);
+    }
+}
+
+@media (max-width: 480px) {
+    nav h1 {
+        font-size: 25px;
+    }
+
+    .texthome span {
+        font-size: 50px;
+    }
+}
+
+.home {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 100%, 1);
+    background-image:
+        radial-gradient(at 91% 33%, hsla(43, 89%, 43%, 0.87) 0px, transparent 50%),
+        radial-gradient(at 78% 43%, hsla(43, 89%, 43%, 0.87) 0px, transparent 50%),
+        radial-gradient(at 0% 0%, hsla(43, 89%, 43%, 0.87) 0px, transparent 50%);
+}
+
+.home img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top:10%;
+    width: 50%;
+    max-width: 500px;
+    animation: moveUpAndDown 2s infinite;
+    filter: drop-shadow(16px 16px 20px rgba(0, 0, 0, 0.74));
+}
+
+@keyframes moveUpAndDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.texthome {
+    position: relative;
+    top: 25%;
+    left: 10%;
+    font-size: 35px;
+    font-family: "Lexend Deca", serif;
+}
+
+.texthome span {
+    color: rgb(255, 187, 0);
+    font-family: "Caveat Brush", serif;
+    font-weight: 400;
+    font-size: 79px;
+}
+
+.texthome h2 {
+    font-size: 13px;
+    position: relative;
+    left: 1%;
+    font-weight: 500;
+}
+
+.texthome button {
+    width: 120px;
+    height: 40PX;
+    font-size: 15PX;
+    border-radius: 10px;
+    border: 2px solid black;
+    font-family: "Cabin", serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s;
+    color: white;
+    background-color: black;
+    box-shadow: rgba(26, 26, 27, 0.664) 0px 7px 29px 0px;
+    position: relative;
+    left: 1%;
+}
+
+.texthome button:hover {
+    color: rgb(255, 187, 0);
+    border: 2px solid rgb(255, 187, 0);
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    .home{
+        height: 120vh;
+        
+    }
+    .home img{
+        position: relative;
+        top: 12%;
+        left:0%;
+        width: 100%;
+    }
+    .texthome{
+        top: 12%;
+        left: 3%;
+    }
+    .texthome  span{
+        font-size: 60px;
+    }
+    .texthome h1 {
+        font-size: 45px;
+    }
+}
+
+.colors {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.colors h1 {
+    text-align: center;
+    font-family: "Lexend Deca", serif;
+    position: relative;
+}
+
+.colors h3 {
+    position: absolute;
+    left: 50%;
+    bottom: -58px;
+    transform: translate(-50%);
+    font-size: 80px;
+    font-family: "Lexend Deca", serif;
+    color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke: 2px rgb(255, 187, 0);
+    opacity: 0.5;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    position: relative;
+    top: 30%;
+}
+
+.card {
+    width: 90%;
+    margin: 10px auto;
+    height: 250px;
+    background-color: #fdebd6;
+    border-radius: 15px;
+}
+
+.card img {
+    width: 50%;
+    position: relative;
+    bottom: 100px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.card h2 {
+    position: relative;
+    bottom: 130px;
+    font-family: "Lexend Deca", serif;
+}
+@media (max-width: 480px) {
+    .cards{
+        position: relative;
+        top: 17%;
+        gap: 30PX;
+    }
+    .colors{
+        height: 160vh;
+    }
+    .colors h1{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: -24%;
+    }
+    .colors h3{
+        position:  absolute ;
+        bottom: -175px;
+        text-align: center;
+    }
+    
+}
+/* 
+.shop {
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 100%, 1);
+    background-image:
+        radial-gradient(at 5% 49%, hsla(44, 100%, 50%, 1) 0px, transparent 50%),
+        radial-gradient(at 80% 49%, hsla(44, 100%, 50%, 1) 0px, transparent 50%);
+}
+
+.shop h1 {
+    text-align: center;
+    font-family: "Lexend Deca", serif;
+    position: relative;
+}
+
+.shop h3 {
+    position: absolute;
+    left: 50%;
+    bottom: -89%;
+    transform: translate(-50%);
+    font-size: 80px;
+    font-family: "Lexend Deca", serif;
+    color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke: 2px rgb(255, 187, 0);
+    opacity: 0.5;
+} */
